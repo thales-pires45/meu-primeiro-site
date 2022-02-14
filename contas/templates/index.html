@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+<!-- Reescreva os blocos que deseja substituir em base.html -->
+{% block content %}
+
+    <h1 >Página inicial</h1>
+
+    <h3>O sistema acadêmico tem atualmente os seguintes registros:</h3>
+    <ul>
+        <li><strong>Clientes:</strong> {{ num_cliente }}</li>
+        <li><strong>Filmes:</strong> {{ num_filme }}</li>
+        <li><strong>Locação:</strong> {{ num_locacao }}</li>
+    </ul>
+
+{% endblock %}

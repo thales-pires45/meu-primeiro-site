@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Apagar Locações</h1>
+
+<p>Tem certeza que quer excluir essa locação: {{ locacao.cliente }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Sim, excluir.">
+</form>
+
+{% endblock %}

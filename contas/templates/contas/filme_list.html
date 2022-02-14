@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Lista de Filmes</h1>
+    <a href="{% url 'filme-create' %}"> Cadastrar Filmes</a>
+    {% if filme_list %}
+        <ul>
+            {% for filme in filme_list %}
+                <li>
+                    <a href="{{ filme.get_absolute_url }}">
+                        {{filme.titulo}}
+                        <a href="{% url 'filme-update' filme.id%}"> - Atualizar</a>
+                        <a href="{% url 'filme-delete' filme.id%}"> - Excluir</a>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não existem filme cadastrados.</p>
+    {% endif %}
+{% endblock %}

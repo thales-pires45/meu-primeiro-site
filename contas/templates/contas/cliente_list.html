@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Lista de Clientes</h1>
+    <a href="{% url 'cliente-create' %}"> Cadastrar aluno</a>
+    {% if cliente_list %}
+        <ul>
+            {% for cliente in cliente_list %}
+                <li>
+                    <a href="{{ cliente.get_absolute_url }}">
+                        {{cliente.nome}}
+                        <a href="{% url 'cliente-update' cliente.id%}"> - Atualizar</a>
+                        <a href="{% url 'cliente-delete' cliente.id%}"> - Excluir</a>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não existem clientes cadastrados.</p>
+    {% endif %}
+{% endblock %}

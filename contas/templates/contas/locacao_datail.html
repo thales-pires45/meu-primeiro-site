@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Nome: {{ locacao.cliente.nome }}</h2>
+    <p><strong>CPF:</strong> {{ locacao.cliente.cpf }}</p>
+    <p><strong>Data de nascimento:</strong> {{ locacao.cliente.data_nascimento }}</p>
+    <h2>Filme: {{ locacao.filme.titulo }}</h2>
+    <p><strong>Gênero:</strong> {{ locacao.filme.genero }}</p>
+    <p><strong>Produtora:</strong> {{ locacao.filme.produtora }}</p>
+    <p><strong>Valor:</strong> {{ locacao.valor }}</p>
+    <p><strong>Data:</strong> {{ locacao.data_locacao }}</p>
+
+{% endblock %}

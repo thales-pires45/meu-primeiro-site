@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Lista de Locação</h1>
+    <a href="{% url 'locacao-create' %}"> Cadastrar Locação</a>
+    {% if locacao_list %}
+        <ul>
+            {% for locacao in locacao_list %}
+                <li>
+                    <a href="{{ locacao.get_absolute_url }}">
+                        {{locacao.cliente.nome}} - {{locacao.filme.titulo}} - {{locacao.data_locacao}} - {{locacao.valor}}
+                        <a href="{% url 'locacao-update' locacao.id%}"> - Atualizar</a>
+                        <a href="{% url 'locacao-delete' locacao.id%}"> - Excluir</a>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não existem locação cadastrados.</p>
+    {% endif %}
+{% endblock %}

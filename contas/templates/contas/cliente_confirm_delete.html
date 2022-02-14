@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Apagar Cliente</h1>
+
+<p>Tem certeza que quer excluir esse Cliente: {{ cliente.nome }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Sim, excluir.">
+</form>
+
+{% endblock %}
